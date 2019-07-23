@@ -7,17 +7,15 @@ router.get('/', function (req, res, next) {
     res.send('Documents');
 });
 
-router.post('/:templateName/render', function (req, res, next) {
+router.post('/:templateName/render', async (req, res, next) => {
     const body = req.body;
-    renderer.renderTemplateToStream(
+    const pdf = await renderer.renderToPdf(
         body.company,
         req.params.templateName,
-        body.model,
-        (stream) => {
-            res.setHeader('Content-type', 'application/pdf');
-            stream.pipe(res);
-        }
+        body.model
     );
+    res.set({ 'Content-Type': 'application/pdf', 'Content-Length': pdf.length });
+    res.send(pdf);
 });
 
 

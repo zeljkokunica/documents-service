@@ -12,6 +12,6 @@
     "hbs": "~4.0.4",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
-    "html-pdf": "~2.2.0"
+    "puppeteer": "^1.19.0"
   }
 }
