@@ -1,4 +1,4 @@
-# document-renderer service
+# Documents service
 Node service for rendering PDF documents from HTML templates.
 
 ## Running the service
