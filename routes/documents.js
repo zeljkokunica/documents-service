@@ -17,9 +17,10 @@ router.post('/:templateName/render', async (req, res, next) => {
             {
                 format: "A4",
                 displayHeaderFooter: true,
-                headerTemplate: "<div style='width: 100%; text-align: right'><span style='font-size: 24px;' class='pageNumber'></span><span style='font-size: 24px;'>/</span><span style='font-size: 24px;'class='totalPages'></span></div> ",
+                headerTemplate: "<p></p>",
+                footerTemplate: "<div style='width: 100%; text-align: right; padding-right: 30px;'><span style='font-size: 12px;' class='pageNumber'></span><span style='font-size: 12px;'>/</span><span style='font-size: 12px;'class='totalPages'></span></div> ",
                 margin: {
-                    top: "60px"
+                    bottom: "40px"
                 }
             }
         );
